@@ -16,7 +16,7 @@ export default function ProductImage({title,image,fill}:ProductImageProps) {
         alt={title} 
         /> :(<Image 
         src={image}
-        sizes='300px'
+        sizes='100vw'
         width={140}
         height={80}
         className={`object-cover duration-700 ease-in-out group-hover:opacity-75 max-w-full h-auto m-auto ${loading? "scale-110 blur-2xl grayscale": "scale-100 blur-0 grayscale-0"}`}
