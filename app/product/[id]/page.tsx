@@ -1,3 +1,4 @@
+import ErrorButtons from '@/components/client/ErrorButtons';
 import { fetchProduct } from '@/lib/api'
 import Image from 'next/image'
 import React from 'react'
@@ -7,8 +8,8 @@ export default async function page({params}:any) {
   const product = await fetchProduct(id).then(res=> res.json())
   const {image,title,description,price,rating} = product
   return (
-    <div className='mt-5'>
-      <div className='min-h-screen'>
+    <div className='mt-5 min-h-screen'>
+      <div className=''>
         <div className='flex justify-center gap-4 w-[80%] mx-auto'>
           <div className='flex items-center  object-contain'>
             <Image
@@ -26,12 +27,13 @@ export default async function page({params}:any) {
             </div>
             <div>
               <h2>description</h2>
-              <p className='line-clamp-2'>{description}</p>
+              <p className=''>{description}</p>
             </div>
             <div>
               <h2>rating</h2>
               <p>{rating.rate}</p>
             </div>
+            <ErrorButtons/>
           </div>
         </div>
       </div>

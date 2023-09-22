@@ -1,8 +1,11 @@
+"use client"
 import { Card,CardContent,CardDescription, CardFooter, CardHeader, CardTitle } from "../ui/card";
 import { AspectRatio } from "../ui/aspect-ratio";
 import Image from "next/image";
 import { Star ,StarHalf} from "lucide-react";
 import Link from "next/link";
+import ProductImage from "../custom/ProductImage";
+
 
 export interface ProductCardProps {
   "id": number,
@@ -21,23 +24,19 @@ export default function ProductCard({id,title,price,description,image,rating,cat
   const {rate,count} = rating
   return (
 <Link href={`product/${id}`}>
-      <Card className="w-[95%] bg-muted md:w-[350px] shadow-lg">
-        <CardContent>
-          <div className="w-full py-2 bg-muted">
-            <AspectRatio ratio={16/9}>
-              <Image src={image} 
-              className="object-fit rounded-lg " 
-              fill 
-              alt={title}/>
-            </AspectRatio>
+      <Card className="h-[400px] bg-gray-400 ">
+        <CardContent className=" flex flex-col justify-center p-2">
+          <p className="text-lg font-bold mb-2 ">{title}</p>
+          <div>
+            <ProductImage 
+            image={image}
+             title={title}/>
           </div>
           <div className="flex flex-col gap-2">
-            <p>{title}</p>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center max-w-full">
               <p className="capitalize tracking-wider text-muted-foreground font-bold">price:</p>
               <p>$ {price}</p>
             </div>
-
             <div className="flex justify-between items-center">
               <p className="capitalize tracking-wider text-muted-foreground font-bold">rate:</p>
               <p  className="flex items-center">{rate}
@@ -55,8 +54,6 @@ export default function ProductCard({id,title,price,description,image,rating,cat
             </div>
           </div>
         </CardContent>
-        <CardFooter> 
-        </CardFooter>
       </Card>
 </Link>
   );

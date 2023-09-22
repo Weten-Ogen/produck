@@ -9,7 +9,7 @@ interface ProductGridProp{
 
 export default function ProductGrid({data}:ProductGridProp) {
   return (
-    <div className='flex flex-col justify-center gap-4 md:grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 items-center md:px-8'>
+    <div className='w-[90%] sm:grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-8 md: items-start  md:justify-center mx-auto mt-10'>
     {data?.map(item => (
         <ProductCard  {...item}/>
     ))}

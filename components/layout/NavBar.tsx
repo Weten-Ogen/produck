@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function NavBar() {
   return (
-    <div className='flex fixed top-0 left-0 w-full bg-muted z-[20] items-center justify-between py-2 px-4'>
+    <div className='flex fixed top-0 left-0 w-full bg-muted z-[20] items-center justify-between py-2 px-8'>
     <Link href='/'>
       <div className='cursor-pointer uppercase tracking-wider font-bold text-red-500'>Produck</div>
     </Link>
